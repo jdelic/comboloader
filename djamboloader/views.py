@@ -80,5 +80,6 @@ def load(request, library=None):
 
     return HttpResponse(response, mimetype=mimetype)
   except LibraryLoaderError, e:
-    return HttpResponseNotFound("Couldn't read from %s." % e.filename)
+    #return HttpResponseNotFound("Couldn't read from %s." % e.filename)
+    return HttpResponseNotFound("Could not find file.")
 
