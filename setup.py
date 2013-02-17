@@ -25,4 +25,7 @@ setup(
         'djamboloader',
         'djamboloader.util',
     ],
+    install_requires=[
+        'Django>=1.4,<1.5'
+    ]
 )
