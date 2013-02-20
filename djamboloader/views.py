@@ -55,7 +55,7 @@ def load(request, library=None):
 
     for ext, mimetype in SUPPORTED_FILE_TYPES.iteritems():
         if libs[0].endswith(ext):
-        break
+            break
 
     if mimetype is None:
         logger.error("Unsupported file format")
