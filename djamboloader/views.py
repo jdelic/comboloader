@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
-from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_headers
+from django.views.decorators.cache import cache_page, cache_control
 from functools import wraps
 
 import logging
@@ -36,6 +37,8 @@ def cache_library(load_view):
   return wrapper
  
    
+@cache_control(public=True)
+@vary_on_headers('Accept-Encoding')
 @cache_library
 def load(request, library=None):
   """
