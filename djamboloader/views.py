@@ -17,7 +17,7 @@ SUPPORTED_FILE_TYPES = {
 
 
 def cache_library(load_view):
-    '''Caches the page if 'cache_for' is set in settings'''
+    """Caches the page if 'cache_for' is set in settings"""
 
     def get_cache_ttl(library=None):
         cache_ttl = None
