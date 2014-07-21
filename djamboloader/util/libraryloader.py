@@ -35,13 +35,13 @@ class LibraryLoader:
             path = os.path.join(self.path, lib)
             path = os.path.abspath(path)
 
-        try:
-            f = open(path, "r")
-            content += f.read()
-            f.close()
-        except IOError, e:
-            logger.error(e)
-            raise LibraryLoaderError(path)
+            try:
+                f = open(path, "r")
+                content += f.read()
+                f.close()
+            except IOError, e:
+                logger.error(e)
+                raise LibraryLoaderError(path)
 
         return content
 
