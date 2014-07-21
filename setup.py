@@ -26,6 +26,7 @@ setup(
         'djamboloader.util',
     ],
     install_requires=[
-        'Django>=1.5,<1.6'
+        'Django>=1.6,<1.7'
     ]
 )
+
