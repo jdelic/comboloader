@@ -70,7 +70,7 @@ def load(request, library=None):
             logger.error("All parameters must be of the same type")
             return HttpResponseBadRequest()
 
-    if not settings.LIBRARIES.has_key(library):
+    if not library in settings.LIBRARIES:
         logger.error("Unsupported library")
         return HttpResponseBadRequest()
 
