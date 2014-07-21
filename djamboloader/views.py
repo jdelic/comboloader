@@ -80,7 +80,7 @@ def load(request, library=None):
     loader = LibraryLoader(libconfig["path"])
     try:
         response = loader.combine(libs)
-        return HttpResponse(response, mimetype=mimetype)
+        return HttpResponse(response, content_type=mimetype)
     except LibraryLoaderError, e:
         #return HttpResponseNotFound("Couldn't read from %s." % e.filename)
         return HttpResponseNotFound("Could not find file.")
