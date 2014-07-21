@@ -68,7 +68,7 @@ def load(request, library=None):
     for lib in libs:
         if not lib.endswith(ext):
             logger.error("All parameters must be of the same type")
-        return HttpResponseBadRequest()
+            return HttpResponseBadRequest()
 
     if not settings.LIBRARIES.has_key(library):
         logger.error("Unsupported library")
