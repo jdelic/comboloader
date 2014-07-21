@@ -34,7 +34,8 @@ def cache_library(load_view):
             return cached_load_view(request, library)
         else:
             return load_view(request, library)
-        return wrapper
+
+    return wrapper
 
    
 @cache_control(public=True)
