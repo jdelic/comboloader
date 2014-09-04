@@ -61,14 +61,14 @@ def load(request, library=None):
         if libs[0].endswith(ext):
             break
 
-        if mimetype is None:
-            logger.error("Unsupported file format")
-            return HttpResponseBadRequest()
+    if mimetype is None:
+        logger.error("Unsupported file format")
+        return HttpResponseBadRequest()
 
-        for lib in libs:
-            if not lib.endswith(ext):
-                logger.error("All parameters must be of the same type")
-                return HttpResponseBadRequest()
+    for lib in libs:
+        if not lib.endswith(ext):
+            logger.error("All parameters must be of the same type")
+            return HttpResponseBadRequest()
 
     if not library in settings.LIBRARIES:
         logger.error("Unsupported library")
