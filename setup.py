@@ -6,13 +6,12 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='Djamboloader',
+    name='mn-comboloader',
     version='0.1.2',
     description='A python/django based combo loader for javascript and css',
-    long_description='djamboloader (for django combo loader) is a simple django application used to load and combine a list of javascript or css files from the filesystem for a specific library.',
-    author='Julien Lauron',
-    url='https://github.com/jlauron/djamboloader',
-    download_url='https://github.com/jlauron/djamboloader/downloads',
+    long_description='comboloader (a fork of djamboloader (for django combo loader)) is a simple django application used to load and combine a list of javascript or css files from the filesystem for a specific library.',
+    author='@jdelic',
+    url='https://github.com/jdelic/comboloader',
     classifiers=[
         "Framework :: Django",
         "Intended Audience :: Developers",
@@ -22,11 +21,12 @@ setup(
         "Topic :: Software Development"
     ],
     packages=[
-        'djamboloader',
-        'djamboloader.util',
+        'comboloader',
     ],
     install_requires=[
-        'Django>=1.6,<1.7'
+        'Django>=1.6,<1.7',
+        'django-cache-url',
+        'gunicorn>=19,<20',
     ]
 )
 
